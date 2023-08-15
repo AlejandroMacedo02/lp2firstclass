@@ -28,6 +28,21 @@ public class UserEntity {
     private String password;
     private LocalDateTime dateCreated;
 
+    public UserEntity() {
+    }
+
+    public UserEntity(Integer id, String username, String firstname, String lastname, String email, String address, String cellphone, String password, LocalDateTime dateCreated) {
+        this.id = id;
+        this.username = username;
+        this.firstname = firstname;
+        this.lastname = lastname;
+        this.email = email;
+        this.address = address;
+        this.cellphone = cellphone;
+        this.password = password;
+        this.dateCreated = dateCreated;
+    }
+
     
     
     public Integer getId() {
