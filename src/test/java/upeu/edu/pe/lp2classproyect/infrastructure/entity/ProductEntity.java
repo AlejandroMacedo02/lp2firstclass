@@ -19,7 +19,7 @@ import java.time.LocalDateTime;
  */
 @Entity
 @Table(name = "products")
-public class ProductoEntity {
+public class ProductEntity {
     
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -36,10 +36,10 @@ public class ProductoEntity {
     @ManyToOne
     private UserEntity UserEntity;  
 
-    public ProductoEntity() {
+    public ProductEntity() {
     }
 
-    public ProductoEntity(Integer id, String code, String name, String description, String image, BigDecimal price, LocalDateTime dateCreated, LocalDateTime dateUpdate, UserEntity UserEntity) {
+    public ProductEntity(Integer id, String code, String name, String description, String image, BigDecimal price, LocalDateTime dateCreated, LocalDateTime dateUpdate, UserEntity UserEntity) {
         this.id = id;
         this.code = code;
         this.name = name;
