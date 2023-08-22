@@ -1,13 +1,13 @@
 package upeu.edu.pe.lp2classproyect;
 
-import org.springframework.boot.SpringApplication;
-import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.junit.jupiter.api.Test;
+import org.springframework.boot.test.context.SpringBootTest;
 
-@SpringBootApplication
+@SpringBootTest
 public class Lp2classproyectApplication {
 
-	public static void main(String[] args) {
-		SpringApplication.run(Lp2classproyectApplication.class, args);
+	@Test
+	void contextLoads() {
 	}
 
 }
