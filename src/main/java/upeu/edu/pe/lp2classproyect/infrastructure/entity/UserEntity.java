@@ -1,12 +1,8 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
- */
 package upeu.edu.pe.lp2classproyect.infrastructure.entity;
 
-import jakarta.persistence.Entity;
 import jakarta.persistence.*;
 import java.time.LocalDateTime;
+import lombok.Data;
 
 /**
  *

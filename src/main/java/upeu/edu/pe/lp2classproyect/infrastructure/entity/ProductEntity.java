@@ -1,22 +1,21 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
- */
 package upeu.edu.pe.lp2classproyect.infrastructure.entity;
 
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
+import jakarta.persistence.JoinColumn;
 import jakarta.persistence.ManyToOne;
-import jakarta.persistence.Table;
+import jakarta.persistence.*;
 import java.math.BigDecimal;
 import java.time.LocalDateTime;
+import java.util.UUID;
 
 /**
  *
  * @author alejandromacedop
  */
+
 @Entity
 @Table(name = "products")
 public class ProductEntity {
@@ -34,9 +33,11 @@ public class ProductEntity {
     private LocalDateTime dateUpdate;
     
     @ManyToOne
+    @JoinColumn(name = "user_id")
     private UserEntity UserEntity;  
 
     public ProductEntity() {
+        this.setCode(UUID.randomUUID().toString());
     }
 
     public ProductEntity(Integer id, String code, String name, String description, String image, BigDecimal price, LocalDateTime dateCreated, LocalDateTime dateUpdate, UserEntity UserEntity) {
@@ -50,8 +51,6 @@ public class ProductEntity {
         this.dateUpdate = dateUpdate;
         this.UserEntity = UserEntity;
     }
-    
-    
     
 
     public Integer getId() {
@@ -124,6 +123,11 @@ public class ProductEntity {
 
     public void setUserEntity(UserEntity UserEntity) {
         this.UserEntity = UserEntity;
+    }
+
+    @Override
+    public String toString() {
+        return "ProductEntity{" + "id=" + id + ", code=" + code + ", name=" + name + ", description=" + description + ", image=" + image + ", price=" + price + ", dateCreated=" + dateCreated + ", dateUpdate=" + dateUpdate + ", UserEntity=" + UserEntity + '}';
     }
     
     
